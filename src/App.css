@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.results-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.result-row-full {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.result-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-box.highlight {
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.2);
+}
+
+.result-title {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.result-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 5px;
+}
+
+.result-box.highlight .result-value {
+  color: #2980b9;
+  font-size: 20px;
+}
+
+/* Estilos para los checkboxes */
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.checkbox-group.iva-group {
+  gap: 15px;
+}
+
+.checkbox-group.islr-group {
+  gap: 8px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: rgba(52, 152, 219, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.checkbox-group label:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-group input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.checkbox-group input[type='checkbox']:checked {
+  background-color: #3498db;
+  animation: checkAnim 0.3s ease;
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
+}
+
+@keyframes checkAnim {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.checkbox-group input[type='checkbox']:checked::before {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tasa-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasa-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.tasa-input {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 0;
+  background: transparent;
+}
+
+.tasa-input:focus {
+  outline: none;
+}
+
+.tasa-suffix {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+/* Scrollbar */
+.checkbox-group::-webkit-scrollbar {
+  height: 5px;
+}
+
+.checkbox-group::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border-radius: 10px;
+}
+
+.checkbox-group::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Ajuste para los valores */
+.result-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 5px;
+  text-align: leftt;
+  padding-left: 10px;
+}
+
+.result-value.total-retenido {
+  padding-top: 15px;
+}
+.result-row .result-box.highlight {
+  width: 100%; /* Ocupa todo el espacio disponible */
+  box-sizing: border-box;
+}
+
+/* Asegurar que ambos cuadros tengan el mismo tamaño */
+.result-row .result-box {
+  flex: 1; /* Ambos crecerán igual */
+}
+
+/* Estilo para el valor en dólares */
+.dolar-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+/* Estilo para los sufijos de moneda */
+.result-value::after {
+  content: attr(data-suffix);
+  margin-left: 2px;
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+/* Ajuste para el input de tasa */
+.tasa-input-container {
+  position: relative;
+}
+
+.tasa-suffix {
+  position: absolute;
+  right: 10px;
+  color: #7f8c8d;
+}
+
+/* Mejora visual para checkboxes deseleccionables */
+.checkbox-input:indeterminate + .checkbox-custom {
+  background-color: #f8f9fa;
+  border-color: #e0e0e0;
+}
